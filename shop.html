@@ -39,7 +39,7 @@
 		<!-- ? Preloader Start -->
   <!-- Preloader Start-->
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-			<div class="container">
+			<div class="container-fluid">
 			  <a class="navbar-brand" href="index.html">
 				<img src="images/logogre.png" class="filter" alt="AL YARMOOK" title="AL YARMOOK" style="height:62px;width: auto;margin-left: 21px;" />
 			</a>
@@ -64,10 +64,21 @@
 				</li> -->
 				  <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
 				  <li class="nav-item active"><a href="shop.html" class="nav-link">Products</a></li>
-				  <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
+				  <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+				  <li class="nav-item"><a  class="nav-link"> <div id='google_translate_element'></div></a></li>
 				  <!-- <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li> -->
 				</ul>
 			  </div>
+			  <script>
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: 'true',
+            includedLanguages: 'en,ar,zh-CN,hi,,ja', // <- remove this line to show all language
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+          }, 'google_translate_element');
+        }
+      </script>
 			</div>
 		  </nav>
 		<!-- END nav -->
@@ -2846,6 +2857,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="shop/google-map.js"></script>
   <script src="shop/shop.js"></script>
+  <script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
     
   </body>
 </html>

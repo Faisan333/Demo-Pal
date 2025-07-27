@@ -51,6 +51,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
 body {
+  top: 0 !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -8231,7 +8232,7 @@ h1, h2, h3, h4, h5,
     padding-bottom: 1.5rem;
     padding-left: 20px;
     padding-right: 20px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -8386,6 +8387,7 @@ h1, h2, h3, h4, h5,
       -o-transition: .3s all ease-out;
       transition: .3s all ease-out; 
       height:84px;
+      z-index: 4;
     }
     .ftco-navbar-light.scrolled.sleep {
       -webkit-transition: .3s all ease-out;
@@ -12880,3 +12882,26 @@ video {
   background: linear-gradient(0deg, #870808 0%, #b62122 71%);
 }
 
+#google_translate_element select {
+  background: #305c2c;
+  color: #fff4e4;
+  border: none;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 4px 4px
+}
+ 
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px;
+}
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: transparent !important;
+}
+body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, div#goog-gt-tt {
+  display: none !important;
+}
+.goog-te-gadget .goog-te-combo {
+    margin: 0px 0 !important;
+}
