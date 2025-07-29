@@ -9894,14 +9894,14 @@ textarea.form-control {
 --------------------------------------------------------------*/
 
 #footer {
-  background: #000;
+  background: #305c2c;
   padding: 0 0 30px 0;
   color: #eee;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: #111;
+  background: #fff;
   padding: 60px 0 30px 0;
 }
 
@@ -9917,7 +9917,7 @@ textarea.form-control {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
-  border-left: 4px solid #b62122;
+  border-left: 4px solid #305c2c;
 }
 
 #footer .footer-top .footer-info p {
@@ -9925,14 +9925,14 @@ textarea.form-control {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Montserrat", sans-serif;
-  color: #eee;
+  color: #000 !important;
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #333;
-  color: #eee;
+  background: #305c2c;
+  color: #fff;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -9944,17 +9944,18 @@ textarea.form-control {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #b62122;
-  color: #fff;
+  background: #305c2c;
+  color: #000;
 }
 
 #footer .footer-top h4 {
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 12px;
+  font-family: "Marcellus", Roboto, sans-serif;
 }
 
 #footer .footer-top h4::before,
@@ -9968,11 +9969,11 @@ textarea.form-control {
 
 #footer .footer-top h4::before {
   right: 0;
-  background: #555;
+  background: #d3d3d3;
 }
 
 #footer .footer-top h4::after {
-  background: #b62122;
+  background: #305c2c;
   width: 60px;
 }
 
@@ -10001,11 +10002,12 @@ textarea.form-control {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #eee;
+  color: #000 !important;
+  font-family: "Marcellus", Roboto, sans-serif;
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #b62122;
+  color: #305c2c;
 }
 
 #footer .footer-top .footer-contact {
@@ -10014,6 +10016,8 @@ textarea.form-control {
 
 #footer .footer-top .footer-contact p {
   line-height: 26px;
+  font-family: "Marcellus", Roboto, sans-serif;
+  color: #000;
 }
 
 #footer .footer-top .footer-newsletter {
@@ -10027,7 +10031,7 @@ textarea.form-control {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {
-  background: #b62122;
+  background: #305c2c;
   border: 0;
   width: 35%;
   padding: 6px 0;
@@ -10051,6 +10055,12 @@ textarea.form-control {
   font-size: 13px;
   color: #ddd;
 }
+/* .filter{
+  filter: drop-shadow(2px 1px 2px #fff);
+} */
+
+
+
 
 
 #map {
@@ -12905,3 +12915,7 @@ body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .go
 .goog-te-gadget .goog-te-combo {
     margin: 0px 0 !important;
 }
+
+.filter{
+  filter: drop-shadow(0px 0px 3px #fff);
+} 
