@@ -1,0 +1,309 @@
+.filter {
+    filter: drop-shadow(2px 2px 0px black);
+}
+
+.shbtn {
+    background-color: transparent;
+    border: 1px solid #F7EF8A;
+    /* color: white; */
+    /* border-radius: 20px; */
+    background: linear-gradient(45deg, #F7EF8A, #D2AC47, #F7EF8A, #F7EF8A, #D2AC47, #F7EF8A, #F7EF8A, #F7EF8A,  #D2AC47, #F7EF8A);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+      font-size: 20px;
+}
+
+.masking-section {
+  position: relative;
+  z-index: 0;
+  height: 100svh;
+  overflow: hidden;}
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+
+.image-block {
+  position: absolute;
+  width: 13vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  z-index: 0;
+}
+
+  .imgtt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 1rem; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    display: flex;
+    padding: 0.5rem;
+    width: max-content;
+    background-color: rgba(var 0,0,0,0.5);
+    color: white;
+    font-family: "Emirates Bold";
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+
+  /* Positional classes */
+  .image-1 { bottom: 1rem; right: 60.5%; }
+  .image-2 { bottom: 1rem; left: 60.5%; }
+  .image-3 { top: 1rem; right: calc(50% - 6.5vw); }
+  .image-4 { top: 48%; right: calc(50% - 6.5vw); }
+  .image-5 { top: 17.5%; right: 60.5%; }
+  .image-6 { top: 17.5%; left: 60.5%; }
+
+
+.overlay-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-content {
+  position: absolute;
+  inset: 0; 
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.overlay-content__helper {
+  position: relative;
+  z-index: 5;
+  padding: .5rem 2rem;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: clamp(1vw,.8rem,1.2rem);
+}
+
+.brand-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* font-family: var(--font-heading); */
+  font-family: "Blanka";
+  font-weight: 700;
+  font-size: clamp(3rem, 10vw, 10rem);
+  background-color: transparent;
+  color: #F7EF8A;
+  mix-blend-mode: screen;
+  text-shadow: 2px 2px 4px black;
+}
+
+.project-wrap {
+  margin-bottom: 30px; }
+  .project-wrap .img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    position: relative;
+    z-index: 0; }
+    .project-wrap .img .price {
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      display: inline-block;
+      background: grey;
+      color: #fff;
+      font-family:"emirates bold";
+      padding: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .project-wrap .img .price:after, .project-wrap .img .price:before {
+        position: absolute;
+        top: 0;
+        content: ''; }
+      .project-wrap .img .price:after {
+        left: -8px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 8px 8px;
+        border-color: transparent transparent grey transparent; }
+      .project-wrap .img .price:before {
+        width: 0;
+        right: -8px;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 0 0 8px;
+        border-color: transparent transparent transparent grey; }
+  .project-wrap.hotel .img {
+    height: 320px; }
+    .sec-product{
+      background: url("../images/lightgrey.jpg")  top no-repeat fixed;
+    background-size: cover;
+    padding: 7em 0;
+    }
+    .sec-product::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0.2;
+      /* background: rgba(255, 255, 255, 0.92); */
+      /* background: rgba(0,0,0,0.1); */
+      z-index: -1;
+    }
+    .sec-product .container {
+      position: relative;
+      z-index: 10;
+    }
+    .sec-product .container-fluid {
+      position: relative;
+      z-index: 10;
+    }
+  .project-wrap .text {
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+    border-top: none;
+    margin-top: -40px;
+    background:white;
+    /* background: url("../images/front2.jpg") center top no-repeat fixed;
+    background-size: cover; */
+    -webkit-box-shadow: 0px 10px 23px -8px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0px 10px 23px -8px rgba(0, 0, 0, 0.11);
+    /* box-shadow: 0px 10px 23px -8px rgba(0, 0, 0, 0.11); */
+    box-shadow: 0px 4px 8px 0px #bdbdbd;
+   }
+    .project-wrap .text span {
+      font-size: 13px; }
+    .project-wrap .text .days {
+      font-size: 12px;
+      color: #f15d30;
+      text-transform: uppercase;
+      font-weight: 700; }
+    .project-wrap .text h3 {
+      font-size: 24px;
+      margin-bottom: 0;
+      font-weight: 500; }
+      .project-wrap .text h3 a {
+        color: #000000; }
+    .project-wrap .text ul {
+      margin: 0;
+      padding: 0; }
+      .project-wrap .text ul li {
+        display: inline-block;
+        margin-right: 10px;
+        color: #b3b3b3; }
+        .project-wrap .text ul li span {
+          color: #f15d30;
+          margin-right: 10px;
+          font-size: 20px; }
+  .project-wrap:hover .text .price {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #33313b; }
+/*** About ***/
+.about-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-img::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../images/bg-about-img.png) top left no-repeat;
+  background-size: contain;
+}
+
+.project-wrap .img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.hover-img1:hover {
+  background-image: url(../images/im2.jpg) !important;
+}
+.hover-img2:hover {
+  background-image: url(../images/im2.jpg) !important;
+}
+.hover-img3:hover {
+  background-image: url(../images/im2.jpg) !important;
+}
+.hover-img4:hover {
+  background-image: url(../images/im2.jpg) !important;
+}
+
+.worldmap{
+  background: url("../images/mapback.jpg") center top no-repeat fixed;
+    background-size: cover;
+    z-index: -1;
+}
+.worldmap::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -9;
+  background: rgba(0,0,0,0.5);
+}
+.svgstyle{
+  fill: white;
+  width:100%;
+  z-index:1;
+}
+
+path{
+  transition: fill .1s linear
+}
+path:hover{
+  fill: #d1d2d4
+}
+
+.mapHover{
+  fill: #808080;
+}
+.mapHover:hover{
+  fill: #d1d2d4
+}

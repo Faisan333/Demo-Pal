@@ -9,9 +9,34 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+@font-face{
+    font-family: "Emirates Bold";
+    src: url("../fonts/Emirates\ Bold/77eb99c5abc837144cabc9c07da37109.eot");
+    src: url("../fonts/Emirates\ Bold/77eb99c5abc837144cabc9c07da37109.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/Emirates\ Bold/77eb99c5abc837144cabc9c07da37109.woff")format("woff"),
+        url("../fonts/Emirates\ Bold/77eb99c5abc837144cabc9c07da37109.woff2")format("woff2"),
+        url("../fonts/Emirates\ Bold/77eb99c5abc837144cabc9c07da37109.ttf")format("truetype"),
+        url("../fonts/Emirates\ Bold/77eb99c5abc837144cabc9c07da37109.svg#Emirates Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+@font-face{
+    font-family: "Blanka";
+    src: url("../fonts/Blanka/07e0cde7ae44d7e3cdc61a55fe9af110.eot");
+    src: url("../fonts/Blanka/07e0cde7ae44d7e3cdc61a55fe9af110.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/Blanka/07e0cde7ae44d7e3cdc61a55fe9af110.woff")format("woff"),
+        url("../fonts/Blanka/07e0cde7ae44d7e3cdc61a55fe9af110.woff2")format("woff2"),
+        url("../fonts/Blanka/07e0cde7ae44d7e3cdc61a55fe9af110.ttf")format("truetype"),
+        url("../fonts/Blanka/07e0cde7ae44d7e3cdc61a55fe9af110.svg#Blanka")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
 
 body, html {
-	font-family: Arial, sans-serif;
+	font-family: "Emirates Bold" !important;
 	font-size: 15px;
 	color: #666666;
 
