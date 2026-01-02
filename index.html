@@ -3,170 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tabuk Trading - Reminder Alarm</title>
-
+<title>Contact Us</title>
 <style>
-body {
-  font-family:'Segoe UI',sans-serif;
-  background:#eef2f7;
-  margin:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-}
-.app {
-  background:#fff;
-  width:100%;
-  max-width:500px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  padding:25px;
-  text-align:center;
-}
-header h1 { margin:0; font-size:24px; color:#333; }
-header p { margin:5px 0 20px 0; color:#666; font-size:14px; }
-.input-section {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
-  margin-bottom:15px;
-}
-input[type="text"] { flex:1 1 60%; padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px; }
-input[type="datetime-local"] { flex:1 1 35%; padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px; }
-button { padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer; transition:0.3s; }
-button:hover { opacity:0.9; }
-#startBtn { background:#4CAF50; color:#fff; margin-bottom:15px; }
-#addBtn { background:#2196F3; color:#fff; flex:1 1 100%; }
-ul { list-style:none; padding:0; margin-top:20px; text-align:left; }
-li { background:#f9f9f9; margin-bottom:12px; padding:12px 15px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 3px 6px rgba(0,0,0,0.05); }
-li button { background:#e74c3c; color:#fff; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:13px; margin-left:5px; }
-@media(max-width:480px){
-  .input-section { flex-direction:column; }
-  input[type="text"], input[type="datetime-local"] { flex:1 1 100%; }
-}
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .contact-form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 500px;
+    }
+    .contact-form h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+    }
+    .contact-form button {
+        background: #007BFF;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+    .contact-form button:hover {
+        background: #0056b3;
+    }
+    .success-message {
+        color: green;
+        margin-bottom: 15px;
+        display: none;
+    }
+    .error-message {
+        color: red;
+        margin-bottom: 15px;
+        display: none;
+    }
 </style>
 </head>
 <body>
 
-<div class="app">
-<header>
-  <h1>Tabuk Trading</h1>
-  <p>Reminder Alarm</p>
-</header>
-
-<button id="startBtn">Start App</button>
-
-<div class="input-section" style="display:none;">
-  <input type="text" id="reminderInput" placeholder="Reminder text">
-  <input type="datetime-local" id="reminderTime">
-  <button id="addBtn" onclick="addReminder()">Add Reminder</button>
+<div class="contact-form">
+    <h2>Contact Us</h2>
+    <p class="success-message" id="successMsg">Your message has been sent successfully!</p>
+    <p class="error-message" id="errorMsg">Oops! Something went wrong. Please try again.</p>
+    <form id="contactForm" method="POST" action="contact.php">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 </div>
-
-<ul id="reminderList"></ul>
 
 <script>
-let reminders = JSON.parse(localStorage.getItem('reminders') || '[]');
-let activeAlarms = {}; // track active alarms
-const REMINDER_DURATION = 10000; // Alarm duration in milliseconds (10 sec)
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault(); // prevent default form submission
 
-// Generate unique ID for each reminder
-function generateId() {
-  return 'r-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
-}
-
-// Unlock audio on Start App
-document.getElementById('startBtn').addEventListener('click', ()=> {
-  const testAudio = new Audio('https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3');
-  testAudio.play().catch(()=>{});
-  testAudio.pause();
-  testAudio.currentTime = 0;
-  document.getElementById('startBtn').style.display = 'none';
-  document.querySelector('.input-section').style.display = 'flex';
-  cleanupPastReminders(); // remove past reminders
-  renderReminders();
-  startPolling();
-});
-
-// Add reminder
-function addReminder() {
-  const text = document.getElementById('reminderInput').value.trim();
-  const time = document.getElementById('reminderTime').value;
-  if(!text || !time) return alert("Enter reminder and date/time!");
-  const reminder = {id: generateId(), text, time: new Date(time).getTime()};
-  reminders.push(reminder);
-  localStorage.setItem('reminders', JSON.stringify(reminders));
-  renderReminders();
-  document.getElementById('reminderInput').value = '';
-  document.getElementById('reminderTime').value = '';
-}
-
-// Remove reminders that are already past
-function cleanupPastReminders() {
-  const now = Date.now();
-  reminders = reminders.filter(r => r.time >= now);
-  localStorage.setItem('reminders', JSON.stringify(reminders));
-}
-
-// Render reminders
-function renderReminders() {
-  const list = document.getElementById('reminderList');
-  list.innerHTML = '';
-  reminders.forEach((r)=>{
-    const li = document.createElement('li');
-    li.innerHTML = `<span>${r.text} - ${new Date(r.time).toLocaleString()}</span>
-                    <div>
-                      <button onclick="deleteReminder('${r.id}')">Delete</button>
-                    </div>`;
-    list.appendChild(li);
-  });
-}
-
-// Delete reminder
-function deleteReminder(id) {
-  stopAlarm(id);
-  reminders = reminders.filter(r => r.id !== id);
-  localStorage.setItem('reminders', JSON.stringify(reminders));
-  renderReminders();
-}
-
-// Stop alarm internally
-function stopAlarm(id){
-  if(activeAlarms[id]){
-    clearInterval(activeAlarms[id].loop);
-    clearTimeout(activeAlarms[id].timeout);
-    activeAlarms[id].audio.pause();
-    activeAlarms[id].audio.currentTime = 0;
-    delete activeAlarms[id];
-  }
-}
-
-// Polling function
-function startPolling(){
-  setInterval(()=>{
-    const now = Date.now();
-    reminders.forEach((r)=>{
-      if(now >= r.time && !activeAlarms[r.id]){
-        const audio = new Audio('https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3');
-        audio.play().catch(()=>{});
-
-        const loop = setInterval(()=>{
-          audio.currentTime = 0;
-          audio.play().catch(()=>{});
-        }, 1500);
-
-        const timeout = setTimeout(()=>{
-          stopAlarm(r.id);
-        }, REMINDER_DURATION);
-
-        activeAlarms[r.id] = {loop, timeout, audio};
-      }
+    const formData = new FormData(this);
+    
+    fetch('contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if(data === 'success'){
+            document.getElementById('successMsg').style.display = 'block';
+            document.getElementById('errorMsg').style.display = 'none';
+            document.getElementById('contactForm').reset();
+        } else {
+            document.getElementById('successMsg').style.display = 'none';
+            document.getElementById('errorMsg').style.display = 'block';
+        }
+    })
+    .catch(error => {
+        document.getElementById('successMsg').style.display = 'none';
+        document.getElementById('errorMsg').style.display = 'block';
     });
-  }, 1000);
-}
+});
 </script>
 
-</div>
 </body>
 </html>
