@@ -22,14 +22,14 @@
 
 html, body{
   height:100%;
+  margin:0;
+  padding:0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--light);
 }
 
 body{
-  margin:0;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--light);
-  color:#333;
-  overflow:hidden; /* important for mobile iframe */
+  overflow:hidden; /* hide default body scroll */
 }
 
 /* NAVBAR */
@@ -76,7 +76,7 @@ body{
 /* LAYOUT */
 .layout{
   display:flex;
-  margin-top:60px;
+  margin-top:60px; /* below navbar */
   height:calc(100vh - 60px);
 }
 
@@ -111,13 +111,12 @@ body{
 /* CONTENT */
 .content{
   flex:1;
-  background:#f9f9f9;
   position:relative;
   overflow:hidden;
 }
 
-/* RESPONSIVE IFRAME FIX */
-iframe{
+/* RESPONSIVE IFRAME */
+.content iframe{
   position:absolute;
   top:0;
   left:0;
@@ -156,7 +155,7 @@ iframe{
   <div class="nav-left">
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="brand">
-      <img src="CURRENT.png" alt="" style="width:45px;">
+      <img src="CURRENT.png" alt="Brand Logo" style="width:45px;">
     </div>
   </div>
   <div class="user">Admin</div>
@@ -167,7 +166,7 @@ iframe{
 
   <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
-    <a class="active">📊 Dashboard</a>
+    <a class="active" href="#">📊 Dashboard</a>
   </div>
 
   <!-- CONTENT -->
