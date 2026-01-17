@@ -73,6 +73,15 @@ body{
   color:#333;
 }
 
+/* MARQUEE / SCROLLING TEXT */
+.marquee-container {
+  flex: 1;
+  margin: 0 16px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #333;
+}
+
 /* LAYOUT */
 .layout{
   display:flex;
@@ -158,6 +167,14 @@ body{
       <img src="CURRENT.png" alt="Brand Logo" style="width:45px;">
     </div>
   </div>
+
+  <!-- SCROLLING TEXT -->
+  <div class="marquee-container">
+    <marquee scrollamount="5" behavior="scroll" direction="left" style="color: red;">
+      ⚠️ Your Demo for this Application Will Expire on 22/01/2026
+    </marquee>
+  </div>
+
   <div class="user">Admin</div>
 </div>
 
