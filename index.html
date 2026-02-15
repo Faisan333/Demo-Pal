@@ -20,11 +20,16 @@
 
 *{box-sizing:border-box;}
 
-body{
+html, body{
+  height:100%;
   margin:0;
+  padding:0;
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--light);
-  color:#333;
+}
+
+body{
+  overflow:hidden; /* hide default body scroll */
 }
 
 /* NAVBAR */
@@ -68,16 +73,25 @@ body{
   color:#333;
 }
 
+/* MARQUEE / SCROLLING TEXT */
+.marquee-container {
+  flex: 1;
+  margin: 0 16px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #333;
+}
+
 /* LAYOUT */
 .layout{
   display:flex;
-  margin-top:60px;
+  margin-top:60px; /* below navbar */
   height:calc(100vh - 60px);
 }
 
 /* SIDEBAR */
 .sidebar{
-  width:220px;
+  width:160px;
   padding:24px 12px;
   background: var(--sidebar);
   color:#fff;
@@ -106,26 +120,24 @@ body{
 /* CONTENT */
 .content{
   flex:1;
-  background:#f9f9f9;
+  position:relative;
   overflow:hidden;
 }
-.fixed-sheet {
-    position: fixed;
-    top: 20px;       /* distance from top */
-    left: 20px;      /* distance from left */
-    width: 80vw;     /* responsive width */
-    height: 80vh;    /* responsive height */
-    border: none;
-  }
 
-iframe{
+/* RESPONSIVE IFRAME */
+.content iframe{
+  position:absolute;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
   border:0;
 }
+
 /* MOBILE */
 @media(max-width:768px){
   .menu-btn{display:block;}
+
   .sidebar{
     position:fixed;
     top:60px;
@@ -133,7 +145,14 @@ iframe{
     height:calc(100vh - 60px);
     z-index:1000;
   }
-  .sidebar.open{left:0;}
+
+  .sidebar.open{
+    left:0;
+  }
+
+  .content{
+    height:calc(100vh - 60px);
+  }
 }
 </style>
 </head>
@@ -145,9 +164,17 @@ iframe{
   <div class="nav-left">
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="brand">
-        <img src="CURRENT.png" alt="" style="width: 45px;">
+      <img src="CURRENT.png" alt="Brand Logo" style="width:60px;">
     </div>
   </div>
+
+  <!-- SCROLLING TEXT -->
+  <div class="marquee-container">
+    <marquee scrollamount="5" behavior="scroll" direction="left" style="color: red;">
+      ⚠️ Your Demo for this Application Will Expire on 22/02/2026
+    </marquee>
+  </div>
+
   <div class="user">Admin</div>
 </div>
 
@@ -156,13 +183,13 @@ iframe{
 
   <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
-    <a class="active">📊 Dashboard</a>
+    <a class="active" href="#">📊 Dashboard</a>
   </div>
 
   <!-- CONTENT -->
   <div class="content">
-    <iframe class=".fixed-sheet"
-      src="https://docs.google.com/spreadsheets/d/1sT5QhIii2LkBGLifBM8XWsfmauiAeY7d/edit?usp=sharing&ouid=100358538746186639831&rtpof=true&sd=true"
+    <iframe
+      src="https://docs.google.com/spreadsheets/d/1k9IjkVv7ZfXbJNrWaSIaM8N8PflGFEpI/edit?usp=drive_link&ouid=100358538746186639831&rtpof=true&sd=true"
       allowfullscreen>
     </iframe>
   </div>
