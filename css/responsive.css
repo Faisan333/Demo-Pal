@@ -1,0 +1,36 @@
+/**Desktop Query*/
+@media only screen and (min-width: 768px) {
+    
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 202px;
+    border-bottom: 1px solid #eee;
+}
+
+}
+
+/*Tablet Query*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 202px;
+    border-bottom: 1px solid #eee;
+}
+}
+
+/*Mobile Query*/
+@media only screen and (max-width: 480px) {
+   /* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+}
