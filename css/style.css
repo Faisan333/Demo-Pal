@@ -991,3 +991,80 @@ font-size:14px;
 font-size:12px;
 color:#666;
 }
+
+.contact-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-info i {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #b62122;
+}
+
+.contact-info address,
+.contact-info p {
+  margin-bottom: 0;
+  color: #000;
+}
+
+.contact-info h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.contact-info a {
+  color: #000;
+}
+
+.contact-info a:hover {
+  color: #b62122;
+}
+.contact-section .contact-info p a {
+  color: #1a1a1a;
+}
+
+.contact-section .info {
+  width: 100%;
+}
+
+.contact-section .contact-form {
+  width: 100%;
+}
+
+.block-9 .form-control {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  font-size: 15px;
+}
+.mainbox {
+  box-shadow: 0px 4px 8px 0px #bdbdbd;
+}
+.contact-address,
+.contact-phone,
+.contact-email {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+
+  .contact-address,
+  .contact-phone,
+  .contact-email {
+    padding: 20px 0;
+  }
+
+  .contact-phone {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+a {
+  text-decoration: none;
+}
