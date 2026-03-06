@@ -269,8 +269,12 @@ a {
     .product-section .product-item:hover:before {
       height: 70%; }
 
+      .padding-cho{
+        padding-top: 11rem;
+      }
+
 .why-choose-section {
-  padding: 7rem 0; }
+  padding: 0rem 0; }
   .why-choose-section .img-wrap {
     position: relative; }
     .why-choose-section .img-wrap:before {
