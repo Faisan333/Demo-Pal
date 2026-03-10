@@ -31,16 +31,22 @@ body {
 }
 
 
-/* IMAGE EFFECT */
+/* IMAGE BOX */
+.product-img{
+    width:100%;
+    height:320px; /* fixed product image size */
+    overflow:hidden;
+}
 
-.product-card img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
+/* IMAGE */
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
     transition: all .45s ease;
 }
 
-.product-card:hover img {
+.product-card:hover img{
     transform: scale(1.08);
 }
 
@@ -75,7 +81,7 @@ body {
 }
 
 .new-price {
-    color: #ff3c57;
+    color: #453a3a;
     font-weight: 700;
     font-size: 16px;
 }
