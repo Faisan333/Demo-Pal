@@ -57,7 +57,7 @@
 /* IMAGE BOX */
 .product-img{
     width:100%;
-    height:250px; /* fixed product image size */
+    height:420px; /* fixed product image size */
     overflow:hidden;
 }
 }

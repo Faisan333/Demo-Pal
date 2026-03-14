@@ -32,7 +32,7 @@
 			</div>
 			<div class="social-icons">
 				<i class="fab fa-facebook-f"></i>
-				<i class="fab fa-whatsapp"></i>
+				<i class="fab fa-instagram"></i>
 			</div>
 
 			<div class="logo">
@@ -40,8 +40,12 @@
 			</div>
 
 			<div class="header-icons">
-				<i class="fa fa-search"></i>
-				<i class="fa fa-shopping-bag"></i>
+				<i class="fa fa-whatsapp"></i>
+				<i class="fa fa-phone"></i>
+				<!-- <div class="cart-icon" onclick="openCart()">
+					<i class="fa fa-shopping-bag" style="color: black;"></i>
+					<span id="cartCount">5</span>
+				</div> -->
 			</div>
 
 		</header>
@@ -53,13 +57,105 @@
 			<a href="index.html">Home</a>
 			<a href="#feature">Featured</a>
 			<a href="#trending">Trending</a>
-			<a href="#exclusive">Exclusive Collection</a>
-			<a href="shop.html">Products</a>
+			<!-- <a href="#exclusive">Exclusive Collection</a> -->
+			<a href="shop.html">Shop</a>
 			<!-- <a href="#">Flash Sale <span class="badge">UPTO 50%</span></a> -->
 			<a href="#about">About Us</a>
 			<a href="contact.html">Contact Us</a>
 		</nav>
 	</section>
+
+	<!-- CART MODAL -->
+	<div id="cartModals" class="cart-modal">
+		<div class="cart-content">
+
+			<!-- HEADER -->
+			<div class="cart-header">
+				<h3>Shopping Cart</h3>
+				<span class="close-btn" onclick="closeCart()">&times;</span>
+			</div>
+
+			<!-- CART ITEMS -->
+			<div class="cart-items">
+
+				<!-- PRODUCT 1 -->
+				<div class="cart-item">
+					<div class="cart-gallery">
+						<img src="images/product/thobe/1.webp" class="main-img">
+					</div>
+
+					<div class="item-info">
+						<h4>Thobe Classic</h4>
+
+						<div class="price-qty">
+							<p class="price">
+								<img src="images/aed.webp"
+									style="height:15px;width:auto;margin-top:-4px;padding-right:2px;" />
+								<span>25.00</span>
+							</p>
+
+							<div class="qty modern-qty">
+								<button onclick="qtyChange(this,-1)">−</button>
+								<span class="qty-num">1</span>
+								<button onclick="qtyChange(this,1)">+</button>
+							</div>
+
+						</div>
+					</div>
+
+
+					<span class="remove" onclick="removeItem(this)">&times;</span>
+				</div>
+
+				<!-- PRODUCT 2 -->
+				<div class="cart-item">
+					<div class="cart-gallery">
+						<img src="images/kh1.webp" class="main-img">
+					</div>
+
+					<div class="item-info">
+						<h4>Thobe Classic</h4>
+
+						<div class="price-qty">
+							<p class="price" id="aed">
+								<img src="images/aed.webp"
+									style="height:15px;width:auto;margin-top:-4px;padding-right:2px;" />
+								<span>25.00</span>
+							</p>
+
+							<div class="qty modern-qty">
+								<button onclick="qtyChange(this,-1)">−</button>
+								<span class="qty-num">1</span>
+								<button onclick="qtyChange(this,1)">+</button>
+							</div>
+
+						</div>
+					</div>
+					<span class="remove" onclick="removeItem(this)">&times;</span>
+				</div>
+			</div>
+
+			<!-- FOOTER -->
+			<div class="cart-footer">
+				<div class="total">
+					<span>Total</span>
+					<strong><img src="images/aed.webp"
+							style="height:12px;width:auto;margin-top:-4px;padding-right:2px;" />25.00</strong>
+				</div>
+				<a id="chechout" href="https://wa.me/+971507135589?text=I'd like to place an order." target="_blank"
+					style="flex:1;">
+					<button class="userlogin-button" style="width:100%;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+							class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+							<path
+								d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+						</svg>
+						<span style="font-size:13px;font-weight:700;margin-left:6px;">Checkout</span>
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
 	<!-- ===== HERO ===== -->
 	<section class="main">
 
@@ -74,7 +170,7 @@
 			</div>
 
 			<div class="slide">
-				<img src="images/BAN2.png" alt="">
+				<img src="images/BAN2.webp" alt="">
 				<div class="main-text">
 					<h2>New Summer Collection</h2>
 					<button>Explore</button>
@@ -93,65 +189,82 @@
 					<!-- Repeat items twice for smooth infinite loop -->
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>PRINTED</span>
+						<img src="images/product/abaya/a-1.jpg" alt="">
+						<span>Abaya</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh1.webp" alt="">
-						<span>SOLIDS</span>
+						<img src="images/product/abaya/a-2.jpg" alt="">
+						<span>Modest Wear</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>DUPATTAS</span>
+						<img src="images/product/abaya/a-3.jpg" alt="">
+						<span>Ladies Formal</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh3.webp" alt="">
-						<span>KHUSSAS</span>
+						<img src="images/product/abaya/a-4.jpg" alt="">
+						<span>Cotton Salwar</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>JEWELLERY</span>
+						<img src="images/product/abaya/a-5.jpg" alt="">
+						<span>Co-Ord Set</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh2.webp" alt="">
-						<span>FLASH SALE</span>
-					</div>
-
-					<!-- Duplicate for infinite effect -->
-
-					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>PRINTED</span>
+						<img src="images/product/abaya/a-6.jpg" alt="">
+						<span>Prayer Dress</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>SOLIDS</span>
+						<img src="images/product/abaya/a-7.jpg" alt="">
+						<span>Hijab</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>DUPATTAS</span>
+						<img src="images/product/abaya/a-8.jpg" alt="">
+						<span>Girls Section</span>
+					</div>
+					<div class="item">
+						<img src="images/product/abaya/a-1.jpg" alt="">
+						<span>Abaya</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>KHUSSAS</span>
+						<img src="images/product/abaya/a-2.jpg" alt="">
+						<span>Modest Wear</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>JEWELLERY</span>
+						<img src="images/product/abaya/a-3.jpg" alt="">
+						<span>Ladies Formal</span>
 					</div>
 
 					<div class="item">
-						<img src="images/sh4.webp" alt="">
-						<span>FLASH SALE</span>
+						<img src="images/product/abaya/a-4.jpg" alt="">
+						<span>Cotton Salwar</span>
+					</div>
+
+					<div class="item">
+						<img src="images/product/abaya/a-5.jpg" alt="">
+						<span>Co-Ord Set</span>
+					</div>
+
+					<div class="item">
+						<img src="images/product/abaya/a-6.jpg" alt="">
+						<span>Prayer Dress</span>
+					</div>
+
+					<div class="item">
+						<img src="images/product/abaya/a-7.jpg" alt="">
+						<span>Hijab</span>
+					</div>
+
+					<div class="item">
+						<img src="images/product/abaya/a-8.jpg" alt="">
+						<span>Girls Section</span>
 					</div>
 
 				</div>
@@ -168,28 +281,40 @@
 		<div class="categories">
 
 			<div class="category">
-				<img src="images/sh1.webp" class="shop-img" alt="Khussas">
-				<div class="category-name">KHUSSAS</div>
+				<a href="shop.html#abaya"><img src="images/product/abaya/a-1.jpg" class="shop-img" alt="Khussas"></a>
+				<div class="category-name">Abaya</div>
 			</div>
 
 			<div class="category">
-				<img src="images/sh2.webp" class="shop-img" alt="Solids">
-				<div class="category-name">SOLIDS</div>
+				<a href="shop.html#modest"><img src="images/product/abaya/a-2.jpg" class="shop-img" alt="Solids"></a>
+				<div class="category-name">Modest Wear</div>
 			</div>
 
 			<div class="category">
-				<img src="images/sh3.webp" class="shop-img" alt="Dupattas">
-				<div class="category-name">DUPATTAS</div>
+				<a href="shop.html#ladies"><img src="images/product/abaya/a-3.jpg" class="shop-img" alt="Dupattas"></a>
+				<div class="category-name">Ladies Formal</div>
 			</div>
 
 			<div class="category">
-				<img src="images/sh4.webp" class="shop-img" alt="Printed">
-				<div class="category-name">PRINTED</div>
+				<a href="shop.html#cotton"><img src="images/product/abaya/a-4.jpg" class="shop-img" alt="Printed"></a>
+				<div class="category-name">Cotton Salwar</div>
 			</div>
 
 			<div class="category">
-				<img src="images/sh5.webp" class="shop-img" alt="Jewellery">
-				<div class="category-name">JEWELLERY</div>
+				<a href="shop.html#coord"><img src="images/product/abaya/a-5.jpg" class="shop-img" alt="Jewellery"></a>
+				<div class="category-name">Co-Ord Set</div>
+			</div>
+			<div class="category">
+				<a href="shop.html#prayer"><img src="images/product/abaya/a-6.jpg" class="shop-img" alt="Jewellery"></a>
+				<div class="category-name">Prayer Dress</div>
+			</div>
+			<div class="category">
+				<a href="shop.html#hijab"><img src="images/product/abaya/a-7.jpg" class="shop-img" alt="Jewellery"></a>
+				<div class="category-name">Hijab</div>
+			</div>
+			<div class="category">
+				<a href="shop.html#girls"><img src="images/product/abaya/a-8.jpg" class="shop-img" alt="Jewellery"></a>
+				<div class="category-name">Girls Section</div>
 			</div>
 
 		</div>
@@ -280,9 +405,9 @@
 
 		</div>
 
-		<div class="swiper trending-slider">
+		<div class="swiper trending-slider" onclick="window.location.href='shop.html'" style="cursor: pointer;">
 
-			<div class="swiper-wrapper">
+			<div class="swiper-wrapper" onclick="window.location.href='shop.html'" style="cursor: pointer;">
 
 				<!-- PRODUCT 1 -->
 				<div class="swiper-slide">
@@ -493,7 +618,7 @@
 
 	</section>
 
-	<section class="trending-section" id="trending">
+	<section class="trending-section" id="trending" >
 
 		<div class="trending-title">
 
@@ -510,7 +635,7 @@
 
 		<div class="swiper trending-slider">
 
-			<div class="swiper-wrapper">
+			<div class="swiper-wrapper" onclick="window.location.href='shop.html'" style="cursor: pointer;">
 
 				<!-- PRODUCT 1 -->
 				<div class="swiper-slide">
@@ -944,6 +1069,7 @@
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/style.js"></script>
+	<script src="shop/js/shop.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </body>

@@ -70,4 +70,58 @@
 	sitePlusMinus();
 
 
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+
+
+
+const toggle = document.getElementById("currencyToggle");
+const aed = toggle.querySelector(".aed");
+const inr = toggle.querySelector(".inr");
+const indicator = toggle.querySelector(".toggle-indicator");
+
+toggle.addEventListener("click", () => {
+    const isAED = aed.classList.contains("active");
+
+    if (isAED) {
+        // Switch to INR
+        aed.classList.remove("active");
+        inr.classList.add("active");
+        indicator.style.left = "50%";
+        updatePrices("INR");
+    } else {
+        // Switch to AED
+        inr.classList.remove("active");
+        aed.classList.add("active");
+        indicator.style.left = "0";
+        updatePrices("AED");
+    }
+});
+
+function updatePrices(currency) {
+    console.log("Prices updated to", currency); // Replace with your dynamic update logic
+}
+
+//CART SECTION
+function openCart() {
+	document.getElementById("cartModals").style.display = "flex";
+}
+
+function closeCart() {
+	document.getElementById("cartModals").style.display = "none";
+}
+
+function removeItem(el) {
+	el.closest(".cart-item").remove();
+	updateTotal();
+}
+
+
 })()
+
+

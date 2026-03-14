@@ -1,10 +1,10 @@
 // Mobile Menu Toggle
-const menuBtn = document.getElementById("menuBtn");
-const navbar = document.getElementById("navbar");
+// const menuBtn = document.getElementById("menuBtn");
+// const navbar = document.getElementById("navbar");
 
-menuBtn.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-});
+// menuBtn.addEventListener("click", () => {
+//     navbar.classList.toggle("active");
+// });
 
 // Slider
 const slides = document.querySelector(".slides");

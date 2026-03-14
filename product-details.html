@@ -18,6 +18,7 @@
     <link href="css/tiny-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <!-- <link href="shop/css/shop.css" rel="stylesheet"> -->
     <link href="css/product-detail.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <title>NOWAZA BOUTIQUE</title>
@@ -41,8 +42,11 @@
             </div>
 
             <div class="header-icons">
-                <i class="fa fa-search"></i>
-                <i class="fa fa-shopping-bag"></i>
+                <i class="fab fa-instagram"></i>
+                <div class="cart-icon" onclick="open_cart_popup()">
+					<i class="fa fa-shopping-bag" style="color: black;"></i>
+					<span id="cartCount">5</span>
+				</div>
             </div>
 
         </header>
@@ -57,13 +61,104 @@
             <!-- <a href="#">Exclusive Collection</a> -->
             <!-- <a href="#">Accessories</a> -->
             <!-- <a href="#">Flash Sale <span class="badge">UPTO 50%</span></a> -->
-            <a href="">About Us</a>
+            <!-- <a href="">About Us</a> -->
             <a href="shop.html">Products</a>
             <a href="contact.html">Contact Us</a>
         </nav>
     </section>
     <!-- ===== Product Details ===== -->
 
+    <!-- CART MODAL -->
+	<div id="cartModal" class="cart-modal">
+		<div class="cart-content">
+
+			<!-- HEADER -->
+			<div class="cart-header">
+				<h3>Shopping Cart</h3>
+				<span class="close-btn" onclick="closeCart()">&times;</span>
+			</div>
+
+			<!-- CART ITEMS -->
+			<div class="cart-items">
+
+				<!-- PRODUCT 1 -->
+				<div class="cart-item">
+					<div class="cart-gallery">
+						<img src="images/product/abaya/a-8.jpg" class="main-img">
+					</div>
+
+					<div class="item-info">
+						<h4>Abaya</h4>
+
+						<div class="price-qty">
+							<p class="price">
+								<img src="images/aed.webp"
+									style="height:15px;width:auto;margin-top:-4px;padding-right:2px;" />
+								<span>25.00</span>
+							</p>
+
+							<div class="qty modern-qty">
+								<button onclick="qtyChange(this,-1)">−</button>
+								<span class="qty-num">1</span>
+								<button onclick="qtyChange(this,1)">+</button>
+							</div>
+
+						</div>
+					</div>
+
+
+					<span class="remove" onclick="removeItem(this)">&times;</span>
+				</div>
+
+				<!-- PRODUCT 2 -->
+				<div class="cart-item">
+					<div class="cart-gallery">
+						<img src="images/product/abaya/a-5.jpg" class="main-img">
+					</div>
+
+					<div class="item-info">
+						<h4>Abaya</h4>
+
+						<div class="price-qty">
+							<p class="price" id="aed">
+								<img src="images/aed.webp"
+									style="height:15px;width:auto;margin-top:-4px;padding-right:2px;" />
+								<span>125.00</span>
+							</p>
+
+							<div class="qty modern-qty">
+								<button onclick="qtyChange(this,-1)">−</button>
+								<span class="qty-num">1</span>
+								<button onclick="qtyChange(this,1)">+</button>
+							</div>
+
+						</div>
+					</div>
+					<span class="remove" onclick="removeItem(this)">&times;</span>
+				</div>
+			</div>
+
+			<!-- FOOTER -->
+			<div class="cart-footer">
+				<div class="total">
+					<span>Total</span>
+					<strong><img src="images/aed.webp"
+							style="height:12px;width:auto;margin-top:-4px;padding-right:2px;" />25.00</strong>
+				</div>
+				<a id="chechout" href="https://wa.me/+971507135589?text=I'd like to place an order." target="_blank"
+					style="flex:1;">
+					<button class="userlogin-button" style="width:100%;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+							class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+							<path
+								d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+						</svg>
+						<span style="font-size:13px;font-weight:700;margin-left:6px;">Checkout</span>
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>  
 
     <section class="product-details container">
 
@@ -109,12 +204,12 @@
                 <!-- QUANTITY -->
 
                 <!-- QUANTITY SELECTOR -->
-<h6 class="mt-4">Quantity</h6>
-<div class="quantity-selector">
-    <button type="button" class="qty-btn minus">-</button>
-    <input type="number" class="qty-input" value="1" min="1">
-    <button type="button" class="qty-btn plus">+</button>
-</div>
+                <h6 class="mt-4">Quantity</h6>
+                <div class="quantity-selector">
+                    <button type="button" class="qty-btn minus">-</button>
+                    <input type="number" class="qty-input" value="1" min="1">
+                    <button type="button" class="qty-btn plus">+</button>
+                </div>
 
                 <!-- SIZE -->
 
@@ -279,6 +374,7 @@
     <script src="js/tiny-slider.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/style.js"></script>
+    <!-- <script src="shop/js/shop.js"></script> -->
     <script src="js/product-detail.js"></script>
 
 </body>
